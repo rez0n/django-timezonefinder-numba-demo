@@ -32,8 +32,8 @@ boto3 = "^1.19.1"
 django-downloadview = "^2.1.1"
 weasyprint = "^53.4"
 django-recaptcha = "^3.0.0"
-timezonefinder = "6.0.2"
-numba = "0.56.0"
+timezonefinder = "5.2.0"
+numba = "0.54.0"
 
 [tool.poetry.dev-dependencies]
 autopep8 = "^1.5.7"
