@@ -1,0 +1,19 @@
+
+<h2>
+    Load time: <span id="load_time">tba</span> ms.
+
+</h2>
+
+<ul>
+    {% for airport in airports %}
+        <li>{{ airport.timezone }}</li>
+    {% endfor %}
+</ul>
+
+<script>
+    window.onload = function () {
+        let loadTime = window.performance.timing.domContentLoadedEventEnd-window.performance.timing.navigationStart;
+        console.log('Page load time is '+ loadTime);
+        document.getElementById("load_time").innerHTML=loadTime;
+    }
+</script>

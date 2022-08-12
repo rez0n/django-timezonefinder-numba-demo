@@ -1,0 +1,11 @@
+version: '3'
+services:
+  timezonefinder_app:
+    container_name: timezonefinder_app
+    build:
+      context: .
+      dockerfile: .docker/Dockerfile
+    image: timezonefinder_app
+    restart: always
+    ports:
+      - "8082:8000"
