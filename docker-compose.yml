@@ -9,3 +9,11 @@ services:
     restart: always
     ports:
       - "8082:8000"
+
+  raw_script:
+    container_name: raw_script
+    build:
+      context: .
+      dockerfile: .docker_raw/Dockerfile
+    image: raw_script
+    restart: always

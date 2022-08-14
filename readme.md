@@ -28,3 +28,17 @@ docker-compose up --build
 #### Open Docker instance
 [http://localhost:8082](http://localhost:8082)
 
+
+## Raw script
+
+### Execute locally
+```
+python test.py
+```
+
+### Execute in Docker
+```
+docker-compose up raw_script --build
+```
+
+It will continuously run again and again if `restart: always` is set in docker-compose.yml
