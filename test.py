@@ -7,7 +7,8 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "app.settings")
 django.setup()
 
 from timezonefindertest.models import Airport
-
+from timezonefinder import TimezoneFinder
+import pytz
 
 # Filter objects that have both lat and lon
 
@@ -23,6 +24,11 @@ airports = airports_first_400
 
 start_time = time.time()
 for airport in airports:
-    print(airport.timezone)
+    tf = TimezoneFinder()
+    tz = tf.timezone_at(lng=float(airport.longitude),
+                        lat=float(airport.latitude))
+    timezone = pytz.timezone(tz)
+    print(airport.id, timezone)
+
 
 print("--- Execution time: %s seconds ---" % (time.time() - start_time))
